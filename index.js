@@ -59,6 +59,8 @@ app.use(bodyParser.urlencoded({extended:true}));
  *  post:
  *   tags:
  *    - Users
+ *   security:
+ *    - bearerAuth: []
  *   description:
  *    - User registration testing
  *   produces:
@@ -100,6 +102,8 @@ app.post('/registration',
  *  post:
  *   tags:
  *    - Users
+ *   security:
+ *    - bearerAuth: []
  *   description:
  *    - User login testing
  *   produces:
@@ -162,7 +166,7 @@ app.post('/login',
  *     description: internal server error
  */
 app.delete('/deleteUser/:id',
-    userAuthentication.verifyToken,userController.deleteUser
+        userController.deleteUser
     );
 app.listen(3043);
 

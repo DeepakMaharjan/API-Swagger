@@ -1,3 +1,4 @@
+var userController = require('./userController');
 var users = require('../Model/usermodel.js');
 var jwt = require('jsonwebtoken');
 var bcrypt = require('bcrypt');
@@ -90,7 +91,7 @@ function verifyToken(req,res,next){
                 res.json({err});
             }
         })
-
+        next;
 }
 
 module.exports = {
